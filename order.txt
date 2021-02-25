@@ -1,0 +1,4 @@
+1 criar migration
+2 criar models == entidade
+3 criar repositorio
+4 criar controller
