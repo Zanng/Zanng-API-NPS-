@@ -20,6 +20,7 @@ class SendMailController {
                 erro: "user does not exists"
             })
         }
+        
 
         const surveysAlredyExists = await surveyRepository.findOne({id:survey_id})
 
