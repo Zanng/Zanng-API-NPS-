@@ -5,6 +5,7 @@ import { SurveysUsersRepository } from '../repositories/SurveysUsersRepository';
 import { UsersRepository } from '../repositories/UsersRespository';
 import sendMailService from '../services/sendMailService';
 import {resolve} from 'path'
+import { AppError } from '../errors/AppErro';
 
 class SendMailController {
     async execute(request: Request, response: Response){
@@ -19,9 +20,8 @@ class SendMailController {
         
 
         if(!user){
-            return response.status(400).json({
-                erro: "user does not exists"
-            });
+            throw new AppError ("user does not exists")
+            
         }
         
 
